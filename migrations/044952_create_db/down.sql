@@ -1,0 +1,2 @@
+-- -- This file should undo anything in `up.sql`
+DROP TABLE users, game, game_clue, connections, sequences, text_clue, image_clue, music_clue, puzzle_wall_conn, puzzle_wall_word, missing_vowels_round, missing_vowels_clue;
