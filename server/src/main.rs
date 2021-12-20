@@ -1,5 +1,5 @@
-use onlyconnect::launch;
 use rocket::launch;
+use server::launch;
 
 #[launch]
 fn rocket() -> _ {

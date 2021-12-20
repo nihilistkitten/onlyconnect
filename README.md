@@ -1,11 +1,20 @@
-# Development
+# Database Stuff
 
-## CLI Testing
+## Configuration
 
+Create a `.env` file in the project root with e.x.
+
+```sh
+DATABASE_URL=postgres://[username]:[password]@localhost/ocdb
+TEST_DATABASE_URL=postgres://[username]:[password]@localhost/ocdb_test
 ```
-curl -X POST http://localhost:8000/api/user -H "Content-Type: application/msgpack" -d (echo '{"username": "test", "email": "example@gmail.com", "updated_at": "'(date -Iseconds)'"}' | json2msgpack) | msgpack2json
+
+or the appropriate url to your local postgres database. One that's done, `diesel setup` should set the database up properly.
+
+## Testing
+
+Some integration tests depend on a test database connection. These are ignored by default, since they must be run in sequence, and should be run like:
+
+```sh
+cargo test -- --ignored --test-threads=1
 ```
-
-## Diesel
-
-Create a `.env` file in the project root with e.x. `DATABASE_URL=postgres://[username]:[password]@localhost/ocdb`, or the appropriate url to your local postgres database. One that's done, `diesel setup` should set the database up properly.

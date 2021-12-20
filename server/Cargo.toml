@@ -1,0 +1,25 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+db = { path = "../db" }
+
+chrono = "0.4.19"
+diesel = "1.4.8"
+dotenv = "0.15.0"
+rocket = { version = "0.5.0-rc.1", features = ["msgpack"] }
+serde = "1.0.132"
+thiserror = "1.0.30"
+diesel_migrations = "1.4.0"
+
+[dependencies.rocket_dyn_templates]
+version = "0.1.0-rc.1"
+default-features = false
+features = ["handlebars"]
+
+[dependencies.rocket_sync_db_pools]
+version = "0.1.0-rc.1"
+default-features = false
+features = ["diesel_postgres_pool"]

@@ -1,7 +1,7 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
-use crate::db::schema::{
+use crate::schema::{
     connections, game_clues, games, image_clues, missing_vowels_clues, missing_vowels_rounds,
     music_clues, puzzle_wall_conns, puzzle_wall_words, sequences, text_clues, users,
 };
@@ -101,7 +101,7 @@ pub struct TextClue {
     pub text: String,
 }
 
-#[derive(Queryable, Debug, Serialize)]
+#[derive(PartialEq, Deserialize, Queryable, Debug, Serialize)]
 pub struct User {
     pub id: i32,
     pub username: String,
@@ -109,7 +109,7 @@ pub struct User {
     pub updated_at: DateTime<Utc>,
 }
 
-#[derive(Deserialize, Insertable)]
+#[derive(Deserialize, Insertable, Serialize)]
 #[table_name = "users"]
 pub struct NewUser {
     pub username: String,
