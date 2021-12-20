@@ -2,14 +2,14 @@ CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
   "username" varchar UNIQUE NOT NULL,
   "email" varchar UNIQUE NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "games" (
   "id" SERIAL PRIMARY KEY,
   "game_name" varchar NOT NULL,
   "user_id" int NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "game_clues" (
@@ -24,7 +24,7 @@ CREATE TABLE "connections" (
   "game_id" int NOT NULL,
   "answer" varchar NOT NULL,
   "user_id" int NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "sequences" (
@@ -32,7 +32,7 @@ CREATE TABLE "sequences" (
   "game_id" int NOT NULL,
   "answer" varchar NOT NULL,
   "user_id" int NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "text_clues" (
@@ -62,7 +62,7 @@ CREATE TABLE "puzzle_wall_conns" (
   "wall_num" int NOT NULL,
   "answer" varchar NOT NULL,
   "user_id" int NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "puzzle_wall_words" (
@@ -78,7 +78,7 @@ CREATE TABLE "missing_vowels_rounds" (
   "round_num" int NOT NULL,
   "round_name" varchar NOT NULL,
   "user_id" int NOT NULL,
-  "updated_at" timestamp NOT NULL
+  "updated_at" timestamptz NOT NULL
 );
 
 CREATE TABLE "missing_vowels_clues" (

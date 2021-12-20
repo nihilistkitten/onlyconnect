@@ -4,7 +4,7 @@ table! {
         game_id -> Int4,
         answer -> Varchar,
         user_id -> Int4,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 
@@ -21,7 +21,7 @@ table! {
         id -> Int4,
         game_name -> Varchar,
         user_id -> Int4,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 
@@ -49,7 +49,7 @@ table! {
         round_num -> Int4,
         round_name -> Varchar,
         user_id -> Int4,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 
@@ -68,7 +68,7 @@ table! {
         wall_num -> Int4,
         answer -> Varchar,
         user_id -> Int4,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 
@@ -86,7 +86,7 @@ table! {
         game_id -> Int4,
         answer -> Varchar,
         user_id -> Int4,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 
@@ -103,7 +103,7 @@ table! {
         id -> Int4,
         username -> Varchar,
         email -> Varchar,
-        updated_at -> Timestamp,
+        updated_at -> Timestamptz,
     }
 }
 

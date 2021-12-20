@@ -4,10 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-chrono = "0.4.19"
-diesel = "1.4.8"
+chrono = { version = "0.4.19", features = ["serde"] }
+diesel = { version = "1.4.8", features = ["chrono"] }
 dotenv = "0.15.0"
-rocket = "0.5.0-rc.1"
+rocket = { version = "0.5.0-rc.1", features = ["msgpack"] }
+serde = "1.0.132"
+thiserror = "1.0.30"
 
 [dependencies.rocket_dyn_templates]
 version = "0.1.0-rc.1"
